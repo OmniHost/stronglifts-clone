@@ -64,19 +64,20 @@ const mockWorkouts: Workout[] = [
 	},
 ];
 
-
-//example of how to mark stuff
-//We should add a date field to workouts and pull data from there
+//example of how to mark stuff:
+//We need to make a function which sorts through workouts and filters by the completed field
+//We then need to take the completed dates and create a list of objects as shown below
+//this can then be passed into the calendar and will highlight dates of completed workouts
 const marked = {
-
     '2023-01-10': { marked: true },
     '2023-01-12': { selected: true },
-  
 };
 
-const testMarked = {
-    
-}
+//How i think this can be achieved
+function markedDates(date: string){
+    return {date: {marked: true}}
+} 
+
 
 export default function HistoryScreen({
 navigation,
@@ -95,7 +96,7 @@ navigation,
                       <Text style = {styles.unselectedText} onPress = {()=> setDisplayedTab('notes')}>{'Notes'}</Text>
               </View>
               <SafeAreaView style={styles.calendarWrapper}>
-                  <CalendarList   //there is an error with the calendars current date. It marks the current day on every month...
+                  <CalendarList  
                       style={{
                           borderWidth: 10,
                           borderColor: 'black',
@@ -119,7 +120,6 @@ navigation,
                     <Text style = {styles.unselectedText} onPress = {()=> setDisplayedTab('calendar')}>{'Calendar'}</Text>
                     <Text style = {styles.selectedText} onPress = {()=> setDisplayedTab('notes')}>{'Notes'}</Text>
             </View> 
-            
             <>
                 {mockWorkouts
                 .filter((workout): boolean => !!workout.completed)
@@ -133,8 +133,6 @@ navigation,
                     )
                 })}
             </>
-
-
           </View>
           
       );
@@ -185,8 +183,6 @@ navigation,
 }
 
 const styles = StyleSheet.create({
-
-//workout List card
 workoutListCard: {
     backgroundColor: '#5A5A5A',
     color: 'white',
@@ -218,16 +214,14 @@ workoutListCard: {
     width: '100%',
     height: 1,
   },
-
-
-historyContainer: { //page container
-  flex: 1,
-  alignItems: "center",
-  paddingTop: 1,
-  paddingHorizontal: 20,
-  backgroundColor: 'black',
-},
-  selectionDiv: { //selection header container
+    historyContainer: { 
+    flex: 1,
+    alignItems: "center",
+    paddingTop: 1,
+    paddingHorizontal: 20,
+    backgroundColor: 'black',
+  },
+  selectionDiv: { 
       flexDirection: 'row',
       width: '100%',
       height: 30,
@@ -239,7 +233,7 @@ historyContainer: { //page container
       backgroundColor: '#5A5A5A',
       borderRadius: 10,
   },
-  unselectedText: { //selection text container (unselected)
+  unselectedText: { 
       width: '33%',
       height: 'auto',
       backgroundColor: '#5A5A5A',
@@ -250,7 +244,7 @@ historyContainer: { //page container
       textAlign: 'center',
       overflow: 'hidden',
   },
-  selectedText: { //could probably change to just a background color and add to styles of selected text
+  selectedText: { 
       width: '33%',
       height: 'auto',
       backgroundColor: '#a9a9a9',
@@ -277,5 +271,4 @@ historyContainer: { //page container
       padding: 10,
       overflow: 'hidden'
   },
-
 });
