@@ -5,4 +5,6 @@ export default interface Workout {
 	exercises: Exercise[];
 	scheduled: Date;
 	completed?: Date;
+	note?: String;
+	id?: number;
 }

@@ -7,12 +7,10 @@ import {
   Keyboard,
   ListViewComponent,
   ScrollView} from "react-native";
-import { RootTabScreenProps } from "../../types";
+import { RootTabScreenProps } from "../types";
 import {CalendarList} from 'react-native-calendars';
 import {useState} from 'react';
-import Workout from "../../models/Workout";
-import EditScreenInfo from '../../components/EditScreenInfo';
-
+import Workout from "../models/Workout";
 
 
 const mockWorkouts: Workout[] = [

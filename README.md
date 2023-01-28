@@ -15,3 +15,4 @@ Clone of stronglifts app with added functionality
 2. Make the commits small and frequent. That way, if something breaks and we have to rollback, less work/code is lost.
 
 
+
