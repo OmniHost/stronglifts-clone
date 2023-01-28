@@ -25,6 +25,11 @@ const linking: LinkingOptions<RootStackParamList> = {
               HistoryScreen: 'history',
             },
           },
+          Settings: {
+            screens: {
+              SettingsScreen: 'settings',
+            },
+          },
         },
       },
       Modal: 'modal',

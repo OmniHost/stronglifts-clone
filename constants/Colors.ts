@@ -10,6 +10,7 @@ const tintColorDark = '#fff';
 
 export default {
   red: '#F93838',
+  superLightGrey: '#ededed',
   subtextGrey: '#9B9DA4',
   lightGrey: '#47484B',
   darkGrey: '#232425',

@@ -2,8 +2,8 @@ import React from "react";
 import { FlatList, ListRenderItem, StyleSheet, Text, View } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { WorkoutStackParamList } from "./TabOneScreen";
-import Exercise from "../models/Exercise";
+import { WorkoutStackParamList } from "./WorkoutsScreen";
+import Exercise from "../../models/Exercise";
 
 type WorkoutDetailsProps = NativeStackScreenProps<
 	WorkoutStackParamList,

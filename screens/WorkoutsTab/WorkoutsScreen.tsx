@@ -1,8 +1,8 @@
-import { RootTabScreenProps } from '../types';
+import { RootTabScreenProps } from '../../types';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WorkoutDetailsScreen from './WorkoutDetailsScreen';
 import WorkoutListScreen from './WorkoutListScreen';
-import Workout from '../models/Workout';
+import Workout from '../../models/Workout';
 import { ListRenderItem } from 'react-native';
 
 export default function WorkoutsScreen({
